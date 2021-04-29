@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qosystem/GradientText.dart';
+import 'package:qosystem/gradients/GradientText.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -49,16 +49,28 @@ class _SplashScreenState extends State<SplashScreen> {
 
           children: <Widget>[
             Padding(padding: EdgeInsets.only(top: 200)),
-            Text(_titulo,
-              style: TextStyle(
-                  fontFamily: 'Saira',
-                  fontSize: 75,
-                  fontWeight: FontWeight.normal,
-                  foreground: Paint()..shader = gradiente1
+            GradientText(_titulo,
+              gradient: LinearGradient(
+                colors: [
+                  Colors.black,
+                  Color(0xFF928F8F),
+                  Colors.white,
+                  Colors.white
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
             GradientText(_subtitulo,
-
+              gradient: LinearGradient(
+                colors: [
+                  Colors.black,
+                  Color(0xFF928F8F),
+                  Colors.white,
+                  Colors.white
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 60)),

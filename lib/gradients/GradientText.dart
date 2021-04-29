@@ -21,7 +21,6 @@ class GradientText extends StatelessWidget {
           color: Colors.white,
           fontFamily: 'Saira',
           fontSize: 75,
-          fontWeight: FontWeight.normal,
 
     ),
       ),
