@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qosystem/gradients/GradientText.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -55,8 +56,11 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 60)),
-            Image.asset("assets/imagens/circulo.png"),
-            Padding(padding: EdgeInsets.only(top: 150)),
+           SpinKitFadingCircle(
+              color: Colors.black38,
+              size: 100.0,
+            ),
+            Padding(padding: EdgeInsets.only(top: 125)),
            Text(
                   _version,
                   textAlign: TextAlign.center,
