@@ -7,25 +7,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
-  final Shader gradiente1 = LinearGradient(
-      colors: <Color>[
-        Color(0xFF928F8F),
-        Color(0xFFFFFFFF)
-      ],
-      begin: Alignment.topCenter,
-      end: Alignment.bottomCenter
-  ).createShader(Rect.fromLTWH(0.0, 0.0, 800, 650));
-
-  final Shader gradiente2 = LinearGradient(
-      colors: <Color>[
-        Color(0xFF928F8F),
-        Color(0xFFFFFFFF)
-      ],
-      begin: Alignment.topCenter,
-      end: Alignment.bottomCenter
-  ).createShader(Rect.fromLTWH(0.0, 0.0, 800, 850));
-
     var _titulo = "QO";
     var _subtitulo = "SYSTEMS";
    var _version = "Version 1.0.0 powered by QO SYSTEMS";
