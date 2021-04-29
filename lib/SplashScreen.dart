@@ -7,60 +7,73 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-   var _titulo = "QO";
-   var _subTitulo = "Systems";
+  final Shader gradiente1 = LinearGradient(
+      colors: <Color>[
+        Color(0xFF928F8F),
+        Color(0xFFFFFFFF)
+      ],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 800, 650));
+
+  final Shader gradiente2 = LinearGradient(
+      colors: <Color>[
+        Color(0xFF928F8F),
+        Color(0xFFFFFFFF)
+      ],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 800, 850));
+
+    var _titulo = "QO";
+    var _subtitulo = "SYSTEMS";
    var _version = "Version 1.0.0 powered by QO SYSTEMS";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
               Color(0xFFFF9900),
-              Color(0xFFF04700),
+              Color(0xFFF01C00),
             ],
           ),
         ),
-        child: Center(
           child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+
           children: <Widget>[
+            Padding(padding: EdgeInsets.only(top: 200)),
             Text(_titulo,
               style: TextStyle(
-                fontFamily: 'Saira',
-                fontSize: 50,
-                fontWeight: FontWeight.normal,
-                color: Color(0xFF928F8F),
+                  fontFamily: 'Saira',
+                  fontSize: 75,
+                  fontWeight: FontWeight.normal,
+                  foreground: Paint()..shader = gradiente1
               ),
             ),
-            Text(_subTitulo,
-                  style: TextStyle(
-                    fontFamily: 'Saira',
-                    fontSize: 50,
-                    fontWeight: FontWeight.normal,
-                    color: Color(0xFF928F8F),
-                  ),
-                ),
-
-            Padding(padding: EdgeInsets.fromLTRB(0,100,0,0),
-              child:Image.asset("assets/imagens/circulo.png")
+            Text(_subtitulo,
+              style: TextStyle(
+                  fontFamily: 'Saira',
+                  fontSize: 75,
+                  fontWeight: FontWeight.normal,
+                  foreground: Paint()..shader = gradiente2
+              ),
             ),
-            Padding(
-                    padding: EdgeInsets.all(35),
-                    child:Text(_version,
-                      textAlign: TextAlign.center,
-                    )
+            Padding(padding: EdgeInsets.only(top: 60)),
+            Image.asset("assets/imagens/circulo.png"),
+            Padding(padding: EdgeInsets.only(top: 150)),
+           Text(
+                  _version,
+                  textAlign: TextAlign.center,
                 )
           ],
         ),
       ),
-
-      ),
-
     );
   }
 }
