@@ -10,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
     var _titulo = "QO";
     var _subtitulo = "SYSTEMS";
-   var _version = "Version 1.0.0 powered by QO SYSTEMS";
+    var _version = "Version 1.0.0 powered by QO SYSTEMS";
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +22,12 @@ class _SplashScreenState extends State<SplashScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFFFF9900),
+              Color(0xBAFF9900),
               Color(0xFFF01C00),
             ],
           ),
         ),
           child: Column(
-
           children: <Widget>[
             Padding(padding: EdgeInsets.only(top: 200)),
             GradientText(_titulo,
