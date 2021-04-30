@@ -10,6 +10,7 @@ class _LoginState extends State<Login> {
   var _bemVindo = "Bem-vindo ao QO SYSTEM, faça seu login para iniciar suas vendas.";
   TextEditingController _controllerLogin = TextEditingController();
   TextEditingController _controllerSenha = TextEditingController();
+  bool _showPassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -67,16 +68,25 @@ class _LoginState extends State<Login> {
                   ),
                 ),
               ),
+
               Padding(padding: EdgeInsets.only(top: 20),
                 child:Theme(
                   data: Theme.of(context).copyWith(accentColor: Colors.red),
                   child: TextField(
-                    obscureText: true,
+                    obscureText: _showPassword == false? true :false,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       labelText: "Senha",
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.black),
+                      ),
+                      suffixIcon: GestureDetector(
+                        child: Icon(_showPassword == false? Icons.visibility_off: Icons.visibility, color: Colors.black,),
+                        onTap: (){
+                          setState(() {
+                            _showPassword = !_showPassword;
+                          });
+                        },
                       ),
                       labelStyle: TextStyle(
                         color: Colors.orange,
@@ -94,6 +104,7 @@ class _LoginState extends State<Login> {
                 ),
               ),
              ),
+
               Padding(padding: EdgeInsets.only(top: 10),
                 child:Row(
                   children: <Widget>[
