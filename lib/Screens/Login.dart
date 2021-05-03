@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:qosystem/variaveis/globals.dart' as globals;
 
 class Login extends StatefulWidget {
   @override
@@ -8,7 +9,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  var _version = "Version 1.0.0 powered by QO SYSTEMS";
+
   var _bemVindo = "Bem-vindo ao QO SYSTEM, faça seu login para iniciar suas vendas.";
   TextEditingController _controllerLogin = TextEditingController();
   TextEditingController _controllerSenha = TextEditingController();
@@ -33,9 +34,6 @@ class _LoginState extends State<Login> {
     }
 
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -149,7 +147,7 @@ class _LoginState extends State<Login> {
                   )
               ),
               Padding(padding: EdgeInsets.only(top: 75),
-                child:Text(_version)
+                child:Text(globals.version)
               ),
             ],
           ),

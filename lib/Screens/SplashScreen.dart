@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qosystem/gradients/GradientText.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:qosystem/variaveis/globals.dart' as globals;
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -12,7 +13,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
     var _titulo = "QO";
     var _subtitulo = "SYSTEMS";
-    var _version = "Version 1.0.0 powered by QO SYSTEMS";
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Padding(padding: EdgeInsets.only(top: 125)),
            Text(
-                  _version,
+                  globals.version,
                   textAlign: TextAlign.center,
                 ),
           ],
