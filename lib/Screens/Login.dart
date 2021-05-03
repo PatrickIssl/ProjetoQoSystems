@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -6,11 +7,35 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
   var _version = "Version 1.0.0 powered by QO SYSTEMS";
   var _bemVindo = "Bem-vindo ao QO SYSTEM, faça seu login para iniciar suas vendas.";
   TextEditingController _controllerLogin = TextEditingController();
   TextEditingController _controllerSenha = TextEditingController();
   bool _showPassword = false;
+  FirebaseAuth auth = FirebaseAuth.instance;
+
+  _realizarLogin() async{
+
+    if(_controllerSenha != "" && _controllerSenha != ""){
+      auth.signInWithEmailAndPassword(
+          email: _controllerLogin.text,
+          password: _controllerSenha.text
+      ).then((firebaseUser){
+        print("Usuario logado com sucesso Email: "+firebaseUser.email);
+
+      }).catchError((erro){
+        print(" erro ao logar : "+ erro.toString());
+      });
+
+    }else{
+      print("Usuário ou senha está vazio");
+    }
+
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +72,7 @@ class _LoginState extends State<Login> {
                     child:TextField(
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
-                        labelText: "Login",
+                        labelText: "E-mail",
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.black),
                         ),
@@ -117,8 +142,11 @@ class _LoginState extends State<Login> {
                 )
               ),
               Padding(padding: EdgeInsets.only(top: 75),
-                child: Image.asset("assets/imagens/flecha.png",
-                ),
+                  child: GestureDetector(
+                      onTap: _realizarLogin,
+                      child:Image.asset("assets/imagens/flecha.png",
+                    ),
+                  )
               ),
               Padding(padding: EdgeInsets.only(top: 75),
                 child:Text(_version)

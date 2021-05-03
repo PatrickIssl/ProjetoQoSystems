@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:qosystem/gradients/GradientText.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -8,6 +9,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
     var _titulo = "QO";
     var _subtitulo = "SYSTEMS";
     var _version = "Version 1.0.0 powered by QO SYSTEMS";
