@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
 
   _realizarLogin() async{
 
-    if(_controllerSenha != "" && _controllerSenha != ""){
+    if(_controllerSenha.text != "" && _controllerSenha.text != ""){
       globals.auth.signInWithEmailAndPassword(
           email: _controllerLogin.text,
           password: _controllerSenha.text

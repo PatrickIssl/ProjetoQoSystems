@@ -14,15 +14,14 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
 
   _enviarEmail() async{
 
-    if(_controllerLogin != ""){
+    if(_controllerLogin.text != ""){
       globals.auth.sendPasswordResetEmail(email: _controllerLogin.text).catchError((erro){
         print(" erro ao logar : "+ erro.toString());
       });
-
+      Navigator.pop(context);
     }else{
       print("E-mail está vazio");
     }
-    Navigator.pop(context);
 
   }
 
@@ -45,6 +44,7 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
           padding: EdgeInsets.all(50),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Padding(padding: EdgeInsets.only(top: 80),
                   child: Image.asset("assets/imagens/logo.png")
