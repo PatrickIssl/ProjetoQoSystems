@@ -9,17 +9,14 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-
-  var _bemVindo = "Bem-vindo ao QO SYSTEM, faça seu login para iniciar suas vendas.";
   TextEditingController _controllerLogin = TextEditingController();
   TextEditingController _controllerSenha = TextEditingController();
   bool _showPassword = false;
-  FirebaseAuth auth = FirebaseAuth.instance;
 
   _realizarLogin() async{
 
     if(_controllerSenha != "" && _controllerSenha != ""){
-      auth.signInWithEmailAndPassword(
+      globals.auth.signInWithEmailAndPassword(
           email: _controllerLogin.text,
           password: _controllerSenha.text
       ).then((firebaseUser){
@@ -58,7 +55,7 @@ class _LoginState extends State<Login> {
                   child: Image.asset("assets/imagens/logo.png")
               ),
               Padding(padding: EdgeInsets.only(top: 75),
-                child:    Text(_bemVindo),
+                child:    Text(globals.bemVindo),
               ),
               Padding(padding: EdgeInsets.only(top: 25),
                   child:Theme(
@@ -138,8 +135,7 @@ class _LoginState extends State<Login> {
               Padding(padding: EdgeInsets.only(top: 75),
                   child: GestureDetector(
                       onTap: _realizarLogin,
-                      child:Image.asset("assets/imagens/flecha.png",
-                    ),
+                      child:Image.asset("assets/imagens/flecha.png"),
                   )
               ),
               Padding(padding: EdgeInsets.only(top: 75),

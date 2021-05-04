@@ -11,8 +11,6 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-    var _titulo = "QO";
-    var _subtitulo = "SYSTEMS";
 
   @override
   Widget build(BuildContext context) {
@@ -32,26 +30,16 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
           children: <Widget>[
             Padding(padding: EdgeInsets.only(top: 200)),
-            GradientText(_titulo,
+            GradientText(globals.subtitulo,
               gradient: LinearGradient(
-                colors: [
-                  Colors.black,
-                  Color(0xFF928F8F),
-                  Colors.white,
-                  Colors.white
-                ],
+                colors: globals.colorTitulo,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
             ),
-            GradientText(_subtitulo,
+            GradientText(globals.subtitulo,
               gradient: LinearGradient(
-                colors: [
-                  Colors.black,
-                  Color(0xFF928F8F),
-                  Colors.white,
-                  Colors.white
-                ],
+                colors: globals.colorTitulo,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
