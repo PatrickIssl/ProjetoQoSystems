@@ -54,14 +54,10 @@ class _LoginState extends State<Login> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 50),
-                  child: Text("Logo",
-                  style: TextStyle(
-                      fontSize: 50,
-                  ),
-                  )
+              Padding(padding: EdgeInsets.only(top: 20),
+                  child: Image.asset("assets/imagens/logo.png")
               ),
-              Padding(padding: EdgeInsets.only(top: 125),
+              Padding(padding: EdgeInsets.only(top: 75),
                 child:    Text(_bemVindo),
               ),
               Padding(padding: EdgeInsets.only(top: 25),

@@ -58,6 +58,7 @@ flutter:
   # https://flutter.dev/assets-and-images/#resolution-aware.
   assets:
    - assets/imagens/flecha.png
+   - assets/imagens/logo.png
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
