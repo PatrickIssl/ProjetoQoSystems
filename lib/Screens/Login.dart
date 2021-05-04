@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/variaveis/globals.dart' as globals;
 
 class Login extends StatefulWidget {
@@ -27,7 +28,7 @@ class _LoginState extends State<Login> {
       });
 
     }else{
-      print("Usuário ou senha está vazio");
+      print("E-mail ou senha está vazio");
     }
 
   }
@@ -124,9 +125,17 @@ class _LoginState extends State<Login> {
               Padding(padding: EdgeInsets.only(top: 10),
                 child:Row(
                   children: <Widget>[
-                    Text("Esqueceu sua senha?",
-                      style: TextStyle(
-                        color: Colors.black,
+                    GestureDetector(
+                      onTap:(){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => RecuperaSenha()),
+                        );
+                      },
+                      child:Text("Esqueceu sua senha?",
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ],

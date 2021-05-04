@@ -21,3 +21,7 @@ Colors.white
 //login
 
 var bemVindo = "Bem-vindo ao QO SYSTEM, faça seu login para iniciar suas vendas.";
+
+//recuperar senha
+
+var recuperarSenha = "Digite o seu E-mail para recuperação de senha";
