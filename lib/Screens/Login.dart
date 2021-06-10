@@ -1,6 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
-import 'package:qosystem/Entity/LoginEntity.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/Screens/TelaMfa.dart';
 import 'package:qosystem/variaveis/globals.dart' as globals;

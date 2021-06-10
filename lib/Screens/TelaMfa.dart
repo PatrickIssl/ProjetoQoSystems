@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/variaveis/globals.dart' as globals;
@@ -9,7 +9,6 @@ class TelaMfa extends StatefulWidget {
 }
 
 class _TelaMfaState extends State<TelaMfa> {
-  bool _showPassword = false;
 
   TextEditingController umController = new TextEditingController();
   TextEditingController doisController = new TextEditingController();
@@ -206,9 +205,6 @@ class _TelaMfaState extends State<TelaMfa> {
                             ),
                           )
                       ),
-
-
-
                     ],
                   )),
 
