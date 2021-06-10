@@ -22,8 +22,8 @@ class _SplashScreenState extends State<SplashScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xBAFF9900),
-              Color(0xFFF01C00),
+              globals.laranja,
+              globals.vermelho,
             ],
           ),
         ),
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             Padding(padding: EdgeInsets.only(top: 60)),
            SpinKitFadingCircle(
-              color: Colors.black38,
+              color: globals.pretoClaro,
               size: 100.0,
             ),
             Padding(padding: EdgeInsets.only(top: 125)),

@@ -35,8 +35,8 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xB9FF9900),
-              Color(0xFFF01C00),
+              globals.laranja,
+              globals.vermelho,
             ],
           ),
         ),
@@ -54,26 +54,26 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
               ),
               Padding(padding: EdgeInsets.only(top: 50),
                 child:Theme(
-                  data: Theme.of(context).copyWith(accentColor: Colors.red),
+                  data: Theme.of(context).copyWith(accentColor: globals.vermelho),
                   child:TextField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       labelText: "E-mail",
                       focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: BorderSide(color: globals.preto),
                       ),
                       labelStyle: TextStyle(
-                        color: Colors.orange,
-                        decorationColor: Colors.white,
+                        color: globals.laranjaClaro,
+                        decorationColor: globals.branco,
                       ),
-                      fillColor: Colors.white,
+                      fillColor: globals.branco,
                       filled: true,
                     ),
-                    cursorColor: Colors.black,
+                    cursorColor: globals.preto,
                     style: TextStyle(
                       fontSize: 15,
-                      color: Colors.black,
-                      decorationColor: Colors.orange,
+                      color: globals.preto,
+                      decorationColor: globals.laranjaClaro,
                     ),
                     controller: _controllerLogin,
                   ),

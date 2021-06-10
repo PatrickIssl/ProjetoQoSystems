@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:qosystem/Entity/LoginEntity.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
+import 'package:qosystem/Screens/TelaMfa.dart';
 import 'package:qosystem/variaveis/globals.dart' as globals;
 
 class Login extends StatefulWidget {
@@ -17,15 +19,14 @@ class _LoginState extends State<Login> {
   _realizarLogin() async{
 
     if(_controllerSenha.text != "" && _controllerSenha.text != ""){
-      globals.auth.signInWithEmailAndPassword(
-          email: _controllerLogin.text,
-          password: _controllerSenha.text
-      ).then((firebaseUser){
-        print("Usuario logado com sucesso Email: "+firebaseUser.email);
 
-      }).catchError((erro){
-        print(" erro ao logar : "+ erro.toString());
-      });
+      globals.login.email = _controllerLogin.text;
+      globals.login.password = _controllerSenha.text;
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => TelaMfa()),
+      );
 
     }else{
       print("E-mail ou senha está vazio");
@@ -42,8 +43,8 @@ class _LoginState extends State<Login> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xB9FF9900),
-              Color(0xFFF01C00),
+              globals.laranja,
+              globals.vermelho,
             ],
           ),
         ),
@@ -60,26 +61,26 @@ class _LoginState extends State<Login> {
               ),
               Padding(padding: EdgeInsets.only(top: 25),
                   child:Theme(
-                    data: Theme.of(context).copyWith(accentColor: Colors.red),
+                    data: Theme.of(context).copyWith(accentColor: globals.vermelho),
                     child:TextField(
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
                         labelText: "E-mail",
                         focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.black),
+                          borderSide: BorderSide(color: globals.preto),
                         ),
                           labelStyle: TextStyle(
-                              color: Colors.orange,
-                              decorationColor: Colors.white,
+                              color: globals.laranjaClaro,
+                              decorationColor: globals.branco,
                           ),
-                          fillColor: Colors.white,
+                          fillColor: globals.branco,
                           filled: true,
                       ),
-                      cursorColor: Colors.black,
+                      cursorColor: globals.preto,
                       style: TextStyle(
                         fontSize: 15,
-                        color: Colors.black,
-                        decorationColor: Colors.orange,
+                        color: globals.preto,
+                        decorationColor: globals.laranjaClaro,
                       ),
                       controller: _controllerLogin,
                   ),
@@ -88,17 +89,17 @@ class _LoginState extends State<Login> {
 
               Padding(padding: EdgeInsets.only(top: 20),
                 child:Theme(
-                  data: Theme.of(context).copyWith(accentColor: Colors.red),
+                  data: Theme.of(context).copyWith(accentColor: globals.vermelho),
                   child: TextField(
                     obscureText: _showPassword == false? true :false,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       labelText: "Senha",
                       focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
+                        borderSide: BorderSide(color: globals.preto),
                       ),
                       suffixIcon: GestureDetector(
-                        child: Icon(_showPassword == false? Icons.visibility_off: Icons.visibility, color: Colors.black,),
+                        child: Icon(_showPassword == false? Icons.visibility_off: Icons.visibility, color: globals.preto,),
                         onTap: (){
                           setState(() {
                             _showPassword = !_showPassword;
@@ -106,16 +107,16 @@ class _LoginState extends State<Login> {
                         },
                       ),
                       labelStyle: TextStyle(
-                        color: Colors.orange,
-                        decorationColor: Colors.orange,
+                        color: globals.laranjaClaro,
+                        decorationColor: globals.laranjaClaro,
                       ),
-                      fillColor: Colors.white,
+                      fillColor: globals.branco,
                       filled: true,
                     ),
-                    cursorColor: Colors.black,
+                    cursorColor: globals.preto,
                     style: TextStyle(
                       fontSize: 15,
-                      color: Colors.black,
+                      color: globals.preto,
                     ),
                     controller: _controllerSenha,
                 ),
@@ -134,7 +135,7 @@ class _LoginState extends State<Login> {
                       },
                       child:Text("Esqueceu sua senha?",
                         style: TextStyle(
-                          color: Colors.black,
+                          color: globals.preto,
                         ),
                       ),
                     ),
