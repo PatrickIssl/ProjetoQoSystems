@@ -1,8 +1,8 @@
 class LoginEntity{
 
- String _email;
+ String _login;
  String _password;
-
+ String _mfa;
 
  String get password => _password;
 
@@ -10,9 +10,15 @@ class LoginEntity{
     _password = value;
   }
 
-  String get email => _email;
+ String get login => _login;
 
-  set email(String value) {
-    _email = value;
+  set login(String value) {
+    _login = value;
+  }
+
+ String get mfa => _mfa;
+
+  set mfa(String value) {
+    _mfa = value;
   }
 }

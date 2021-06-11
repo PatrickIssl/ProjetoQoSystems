@@ -16,21 +16,14 @@ class _LoginState extends State<Login> {
   bool _showPassword = false;
 
   _realizarLogin() async{
-
     if(_controllerSenha.text != "" && _controllerSenha.text != ""){
-
-      variaveis.login.email = _controllerLogin.text;
+      variaveis.login.login = _controllerLogin.text;
       variaveis.login.password = _controllerSenha.text;
+      Navigator.pushNamed(
+          context, '/mfa',
+          );
 
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => TelaMfa()),
-      );
-
-    }else{
-      print("E-mail ou senha está vazio");
     }
-
   }
 
   @override
