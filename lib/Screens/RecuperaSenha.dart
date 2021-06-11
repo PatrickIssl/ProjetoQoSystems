@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:qosystem/variaveis/globals.dart' as globals;
+import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
 class RecuperaSenha extends StatefulWidget {
   @override
@@ -13,16 +13,7 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
   TextEditingController _controllerLogin = TextEditingController();
 
   _enviarEmail() async{
-
-    if(_controllerLogin.text != ""){
-      globals.auth.sendPasswordResetEmail(email: _controllerLogin.text).catchError((erro){
-        print(" erro ao logar : "+ erro.toString());
-      });
-      Navigator.pop(context);
-    }else{
-      print("E-mail está vazio");
-    }
-
+    
   }
 
 
@@ -35,8 +26,8 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              globals.laranja,
-              globals.vermelho,
+              variaveis.laranja,
+              variaveis.vermelho,
             ],
           ),
         ),
@@ -50,30 +41,30 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
                   child: Image.asset("assets/imagens/logo.png")
               ),
               Padding(padding: EdgeInsets.only(top: 75),
-                child:    Text(globals.recuperarSenha),
+                child:    Text(variaveis.recuperarSenha),
               ),
               Padding(padding: EdgeInsets.only(top: 50),
                 child:Theme(
-                  data: Theme.of(context).copyWith(accentColor: globals.vermelho),
+                  data: Theme.of(context).copyWith(accentColor: variaveis.vermelho),
                   child:TextField(
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       labelText: "E-mail",
                       focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: globals.preto),
+                        borderSide: BorderSide(color: variaveis.preto),
                       ),
                       labelStyle: TextStyle(
-                        color: globals.laranjaClaro,
-                        decorationColor: globals.branco,
+                        color: variaveis.laranjaClaro,
+                        decorationColor: variaveis.branco,
                       ),
-                      fillColor: globals.branco,
+                      fillColor: variaveis.branco,
                       filled: true,
                     ),
-                    cursorColor: globals.preto,
+                    cursorColor: variaveis.preto,
                     style: TextStyle(
                       fontSize: 15,
-                      color: globals.preto,
-                      decorationColor: globals.laranjaClaro,
+                      color: variaveis.preto,
+                      decorationColor: variaveis.laranjaClaro,
                     ),
                     controller: _controllerLogin,
                   ),
@@ -86,7 +77,7 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
                   )
               ),
               Padding(padding: EdgeInsets.only(top: 75),
-                  child:Text(globals.version)
+                  child:Text(variaveis.version)
               ),
             ],
           ),

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:qosystem/gradients/GradientText.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:qosystem/variaveis/globals.dart' as globals;
+import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -22,36 +22,36 @@ class _SplashScreenState extends State<SplashScreen> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              globals.laranja,
-              globals.vermelho,
+              variaveis.laranja,
+              variaveis.vermelho,
             ],
           ),
         ),
           child: Column(
           children: <Widget>[
             Padding(padding: EdgeInsets.only(top: 200)),
-            GradientText(globals.subtitulo,
+            GradientText(variaveis.subtitulo,
               gradient: LinearGradient(
-                colors: globals.colorTitulo,
+                colors: variaveis.colorTitulo,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
             ),
-            GradientText(globals.subtitulo,
+            GradientText(variaveis.subtitulo,
               gradient: LinearGradient(
-                colors: globals.colorTitulo,
+                colors: variaveis.colorTitulo,
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
               ),
             ),
             Padding(padding: EdgeInsets.only(top: 60)),
            SpinKitFadingCircle(
-              color: globals.pretoClaro,
+              color: variaveis.pretoClaro,
               size: 100.0,
             ),
             Padding(padding: EdgeInsets.only(top: 125)),
            Text(
-                  globals.version,
+             variaveis.version,
                   textAlign: TextAlign.center,
                 ),
           ],

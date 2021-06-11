@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
-import 'package:qosystem/variaveis/globals.dart' as globals;
+import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
 class TelaMfa extends StatefulWidget {
   @override
@@ -17,14 +17,15 @@ class _TelaMfaState extends State<TelaMfa> {
   TextEditingController cincoController = new TextEditingController();
 
   _realizarLogin() async {
-    globals.auth
-        .signInWithEmailAndPassword(
-            email: globals.login.email, password: globals.login.password)
-        .then((firebaseUser) {
-      print("Usuario logado com sucesso Email: " + firebaseUser.email);
-    }).catchError((erro) {
-      print(" erro ao logar : " + erro.toString());
-    });
+    // http.Response response =
+    // await http.get("${url}usuario/procurar/${nome}/${senha}", headers: variaveis.headerComum);
+    // if (response.statusCode == 200) {
+    //   return json.decode(response.body);
+    // } if (response.statusCode == 400) {
+    //   return json.decode(response.body);
+    // } else{
+    //   Navigator.pop(context);
+    // }
   }
 
   final _formKey = GlobalKey<FormState>();
@@ -38,8 +39,8 @@ class _TelaMfaState extends State<TelaMfa> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              globals.laranja,
-              globals.vermelho,
+              variaveis.laranja,
+              variaveis.vermelho,
             ],
           ),
         ),
@@ -53,7 +54,7 @@ class _TelaMfaState extends State<TelaMfa> {
                   child: Image.asset("assets/imagens/logo.png")),
               Padding(
                 padding: EdgeInsets.only(top: 75),
-                child: Text(globals.enviadoEmail),
+                child: Text(variaveis.enviadoEmail),
               ),
               Padding(padding: EdgeInsets.only(top: 75)),
               Form(
@@ -81,8 +82,8 @@ class _TelaMfaState extends State<TelaMfa> {
                                 ),
                                 hintText: '*',
                                 hintStyle:
-                                TextStyle(color: globals.laranja, fontSize: 15),
-                                fillColor: globals.branco,
+                                TextStyle(color: variaveis.laranja, fontSize: 15),
+                                fillColor: variaveis.branco,
                                 filled: true,
                               ),
                               controller: umController,
@@ -110,8 +111,8 @@ class _TelaMfaState extends State<TelaMfa> {
                                 ),
                                 hintText: '*',
                                 hintStyle:
-                                TextStyle(color: globals.laranja, fontSize: 15),
-                                fillColor: globals.branco,
+                                TextStyle(color: variaveis.laranja, fontSize: 15),
+                                fillColor: variaveis.branco,
                                 filled: true,
                               ),
                               controller: doisController,
@@ -139,8 +140,8 @@ class _TelaMfaState extends State<TelaMfa> {
                                 ),
                                 hintText: '*',
                                 hintStyle:
-                                TextStyle(color: globals.laranja, fontSize: 15),
-                                fillColor: globals.branco,
+                                TextStyle(color: variaveis.laranja, fontSize: 15),
+                                fillColor: variaveis.branco,
                                 filled: true,
                               ),
                               controller: tresController,
@@ -168,8 +169,8 @@ class _TelaMfaState extends State<TelaMfa> {
                                 ),
                                 hintText: '*',
                                 hintStyle:
-                                TextStyle(color: globals.laranja, fontSize: 15),
-                                fillColor: globals.branco,
+                                TextStyle(color: variaveis.laranja, fontSize: 15),
+                                fillColor: variaveis.branco,
                                 filled: true,
                               ),
                               controller: quatroController,
@@ -197,8 +198,8 @@ class _TelaMfaState extends State<TelaMfa> {
                                 ),
                                 hintText: '*',
                                 hintStyle:
-                                TextStyle(color: globals.laranja, fontSize: 15),
-                                fillColor: globals.branco,
+                                TextStyle(color: variaveis.laranja, fontSize: 15),
+                                fillColor: variaveis.branco,
                                 filled: true,
                               ),
                               controller: cincoController,
@@ -223,7 +224,7 @@ class _TelaMfaState extends State<TelaMfa> {
                         child: Text(
                           "Enviar o código novamente",
                           style: TextStyle(
-                            color: globals.preto,
+                            color: variaveis.preto,
                           ),
                         ),
                       ),
@@ -237,7 +238,7 @@ class _TelaMfaState extends State<TelaMfa> {
                   )),
               Padding(
                   padding: EdgeInsets.only(top: 75),
-                  child: Text(globals.version)),
+                  child: Text(variaveis.version)),
             ],
           ),
         ),

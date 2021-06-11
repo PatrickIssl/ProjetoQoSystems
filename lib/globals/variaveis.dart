@@ -1,14 +1,16 @@
-library my_prj.globals;
+
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:qosystem/Entity/LoginEntity.dart';
+import 'package:qosystem/entity/LoginEntity.dart';
+
+
+
+String url =  "http://localhost:5090/";
 
 //login entity
 LoginEntity login = new LoginEntity();
 
-
-//metodo auth da autenticação do usuário
-FirebaseAuth auth = FirebaseAuth.instance;
+//
+var headerComum = {'Accept': 'application/json; charset=UTF-8'};
 
 
 //tela mfa
