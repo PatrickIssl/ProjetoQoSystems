@@ -6,6 +6,7 @@ import 'package:qosystem/entity/Conta.dart';
 import 'package:qosystem/entity/LoginEntity.dart';
 import 'package:qosystem/globals/metodos/Login.dart';
 import 'package:qosystem/globals/metodos/Mfa.dart';
+import 'package:qosystem/globals/metodos/VerificarMfa.dart';
 import 'package:qosystem/globals/variaveis.dart' as variaveis;
 import 'package:http/http.dart' as http;
 
@@ -44,7 +45,7 @@ class _TelaMfaState extends State<TelaMfa> {
             } else {
               Conta conta = snapshot.data;
 
-              return  Scaffold(
+              return Scaffold(
                 body: Container(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -89,7 +90,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
                                             borderRadius:
-                                            const BorderRadius.all(
+                                                const BorderRadius.all(
                                               const Radius.circular(9.0),
                                             ),
                                           ),
@@ -119,7 +120,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
                                             borderRadius:
-                                            const BorderRadius.all(
+                                                const BorderRadius.all(
                                               const Radius.circular(9.0),
                                             ),
                                           ),
@@ -149,7 +150,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
                                             borderRadius:
-                                            const BorderRadius.all(
+                                                const BorderRadius.all(
                                               const Radius.circular(9.0),
                                             ),
                                           ),
@@ -179,7 +180,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
                                             borderRadius:
-                                            const BorderRadius.all(
+                                                const BorderRadius.all(
                                               const Radius.circular(9.0),
                                             ),
                                           ),
@@ -209,7 +210,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
                                             borderRadius:
-                                            const BorderRadius.all(
+                                                const BorderRadius.all(
                                               const Radius.circular(9.0),
                                             ),
                                           ),
@@ -246,7 +247,14 @@ class _TelaMfaState extends State<TelaMfa> {
                         Padding(
                             padding: EdgeInsets.only(top: 75),
                             child: GestureDetector(
-                              onTap: (){},
+                              onTap: () {
+                                String mfa = umController.text.toString() +
+                                    doisController.text.toString() +
+                                    tresController.text.toString() +
+                                    quatroController.text.toString() +
+                                    cincoController.text.toString();
+                                verificarMfa(context, mfa, conta);
+                              },
                               child: Image.asset("assets/imagens/flecha.png"),
                             )),
                         Padding(
