@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                     child:TextField(
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
-                        labelText: "E-mail",
+                        labelText: "Login",
                         focusedBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: variaveis.preto),
                         ),
