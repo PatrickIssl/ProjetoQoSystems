@@ -4,7 +4,7 @@ import 'package:qosystem/entity/LoginEntity.dart';
 
 
 
-String url =  "http://localhost:5090/";
+String url =  "http://153.92.214.178:5090/";
 
 //login entity
 LoginEntity login = new LoginEntity();
