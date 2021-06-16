@@ -217,7 +217,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
                                         onChanged: (value){
-                                          _focusNodes[4].requestFocus();
+                                          _focusNodes[3].unfocus();
                                         },
                                         focusNode: _focusNodes[3],
                                         validator: (value) {
