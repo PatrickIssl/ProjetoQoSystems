@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:qosystem/entity/Conta.dart';
 import 'package:qosystem/entity/LoginEntity.dart';
 
 
@@ -7,6 +8,8 @@ String url =  "http://153.92.214.178:5090/";
 
 //login entity
 LoginEntity login = new LoginEntity();
+
+Conta conta = new Conta(null, null, null, null,null,null,null,null,null,null,null,null,null,null);
 
 //
 var headerComum = {'Accept': 'application/json; charset=UTF-8'};
