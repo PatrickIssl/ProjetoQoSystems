@@ -23,6 +23,7 @@ class _TelaMfaState extends State<TelaMfa> {
   TextEditingController cincoController = new TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
+  var _focusNodes = List.generate(5, (index) => FocusNode());
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +80,10 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
+                                        autofocus: true,
+                                        onChanged: (value){
+                                          _focusNodes[0].requestFocus();
+                                        },
                                         validator: (value) {
                                           if (value == null || value.isEmpty) {
                                             return 'Favor inserir um número válido';
@@ -109,6 +114,10 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
+                                        onChanged: (value){
+                                          _focusNodes[1].requestFocus();
+                                        },
+                                        focusNode: _focusNodes[0],
                                         validator: (value) {
                                           if (value == null || value.isEmpty) {
                                             return 'Favor inserir um número válido';
@@ -139,6 +148,10 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
+                                        onChanged: (value){
+                                          _focusNodes[2].requestFocus();
+                                        },
+                                        focusNode: _focusNodes[1],
                                         validator: (value) {
                                           if (value == null || value.isEmpty) {
                                             return 'Favor inserir um número válido';
@@ -169,6 +182,10 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
+                                        onChanged: (value){
+                                          _focusNodes[3].requestFocus();
+                                        },
+                                        focusNode: _focusNodes[2],
                                         validator: (value) {
                                           if (value == null || value.isEmpty) {
                                             return 'Favor inserir um número válido';
@@ -199,6 +216,10 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
+                                        onChanged: (value){
+                                          _focusNodes[4].requestFocus();
+                                        },
+                                        focusNode: _focusNodes[3],
                                         validator: (value) {
                                           if (value == null || value.isEmpty) {
                                             return 'Favor inserir um número válido';
