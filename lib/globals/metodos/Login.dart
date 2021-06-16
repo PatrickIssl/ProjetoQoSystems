@@ -7,17 +7,17 @@ import 'package:http/http.dart' as http;
 
 Future<Conta> realizarLogin(context) async {
   http.Response response = await http.get(
-      "${variaveis.url}conta/buscar/${variaveis.login.login}/${variaveis.login.password}",
+      "${variaveis.url}pessoa/buscar/${variaveis.login.login}/${variaveis.login.password}",
       headers: variaveis.headerComum);
 
   if (response.statusCode == 200) {
     var dadosJson = json.decode(response.body);
-    Conta conta = Conta(dadosJson["id"], dadosJson["conta"].toString(),
-        dadosJson["senha"].toString(), dadosJson["mfa"].toString());
+    Conta conta = Conta(dadosJson["conta"]["id"], dadosJson["conta"]["conta"].toString(),
+        dadosJson["conta"]["senha"].toString(), dadosJson["conta"]["mfa"].toString());
     return conta;
   }
   if (response.statusCode == 400) {
-    Conta conta = new Conta(null, null, null, null);
+    Conta conta = new Conta(null, null, null, null,null,null,null,null,null,null,null,null,null,null);
     return conta;
   } else {
     Navigator.pop(context);
