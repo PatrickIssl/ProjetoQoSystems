@@ -68,7 +68,8 @@ class _TelaMfaState extends State<TelaMfa> {
                             child: Image.asset("assets/imagens/logo.png")),
                         Padding(
                           padding: EdgeInsets.only(top: 75),
-                          child: Text(variaveis.enviadoEmail),
+                          child: Text(variaveis.enviadoEmail,
+                          textAlign: TextAlign.center,),
                         ),
                         Padding(padding: EdgeInsets.only(top: 75)),
                         Form(

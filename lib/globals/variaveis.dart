@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:qosystem/entity/LoginEntity.dart';
 
 
-
 String url =  "http://153.92.214.178:5090/";
 
 //login entity
