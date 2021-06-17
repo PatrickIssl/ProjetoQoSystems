@@ -39,11 +39,11 @@ class _HomeState extends State<Home> {
                           bottomRight: const Radius.circular(13.0)
                       ),
                       gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                         colors: [
-                          variaveis.laranja,
-                          variaveis.vermelho,
+                          variaveis.laranjaClaro,
+                          variaveis.laranjaMuitoForte,
                         ],
                       ),
                     ),
@@ -69,11 +69,11 @@ class _HomeState extends State<Home> {
                           bottomRight: const Radius.circular(13.0)
                       ),
                       gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                         colors: [
-                          variaveis.laranja,
-                          variaveis.vermelho,
+                          variaveis.laranjaClaro,
+                          variaveis.laranjaMuitoForte,
                         ],
                       ),
                     ),
@@ -105,11 +105,11 @@ class _HomeState extends State<Home> {
                           bottomRight: const Radius.circular(13.0)
                       ),
                       gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                         colors: [
-                          variaveis.laranja,
-                          variaveis.vermelho,
+                          variaveis.laranjaClaro,
+                          variaveis.laranjaMuitoForte,
                         ],
                       ),
                     ),
@@ -135,11 +135,11 @@ class _HomeState extends State<Home> {
                           bottomRight: const Radius.circular(13.0)
                       ),
                       gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                         colors: [
-                          variaveis.laranja,
-                          variaveis.vermelho,
+                          variaveis.laranjaClaro,
+                          variaveis.laranjaMuitoForte,
                         ],
                       ),
                     ),
@@ -171,11 +171,11 @@ class _HomeState extends State<Home> {
                         bottomRight: const Radius.circular(13.0)
                       ),
                       gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                         colors: [
-                          variaveis.laranja,
-                          variaveis.vermelho,
+                          variaveis.laranjaClaro,
+                          variaveis.laranjaMuitoForte,
                         ],
                       ),
                     ),
@@ -201,11 +201,11 @@ class _HomeState extends State<Home> {
                           bottomRight: const Radius.circular(13.0)
                       ),
                       gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
                         colors: [
-                          variaveis.laranja,
-                          variaveis.vermelho,
+                          variaveis.laranjaClaro,
+                          variaveis.laranjaMuitoForte,
                         ],
                       ),
                     ),

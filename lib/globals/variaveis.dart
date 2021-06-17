@@ -45,6 +45,7 @@ var laranjaClaro = Colors.orange;
 var verde = Colors.green;
 var laranja = Color(0xB9FF9900);
 var vermelho = Color(0xFFF01C00);
+var laranjaMuitoForte = Color(0xB9FF2E00);
 var branco = Colors.white;
 var preto = Colors.black;
 var cinza = Color(0xFF928F8F);
