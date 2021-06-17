@@ -13,13 +13,27 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFFF2E00),
-        title: Center(
-            child: Text(
+
+        centerTitle: true,
+        title: Text(
           "QO SYSTEMS",
           style: TextStyle(
               color: variaveis.branco, fontFamily: 'Saira', fontSize: 25),
-        )),
+        ),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color>[
+                    variaveis.laranja,
+                    variaveis.laranja,
+                    variaveis.laranjaMuitoForte
+                  ])
+          ),
+        ),
+
+        backgroundColor: Color(0xFFFF2E00),
       ),
       body: Container(
           padding: EdgeInsets.all(55),
@@ -43,7 +57,7 @@ class _HomeState extends State<Home> {
                         end: Alignment.bottomCenter,
                         colors: [
                           variaveis.laranjaClaro,
-                          variaveis.laranjaMuitoForte,
+                          variaveis.vermelho,
                         ],
                       ),
                     ),
@@ -73,7 +87,7 @@ class _HomeState extends State<Home> {
                         end: Alignment.bottomCenter,
                         colors: [
                           variaveis.laranjaClaro,
-                          variaveis.laranjaMuitoForte,
+                          variaveis.vermelho,
                         ],
                       ),
                     ),
@@ -109,7 +123,8 @@ class _HomeState extends State<Home> {
                         end: Alignment.bottomCenter,
                         colors: [
                           variaveis.laranjaClaro,
-                          variaveis.laranjaMuitoForte,
+                          variaveis.vermelho,
+
                         ],
                       ),
                     ),
@@ -139,7 +154,7 @@ class _HomeState extends State<Home> {
                         end: Alignment.bottomCenter,
                         colors: [
                           variaveis.laranjaClaro,
-                          variaveis.laranjaMuitoForte,
+                          variaveis.vermelho,
                         ],
                       ),
                     ),
@@ -175,7 +190,7 @@ class _HomeState extends State<Home> {
                         end: Alignment.bottomCenter,
                         colors: [
                           variaveis.laranjaClaro,
-                          variaveis.laranjaMuitoForte,
+                          variaveis.vermelho,
                         ],
                       ),
                     ),
@@ -205,7 +220,7 @@ class _HomeState extends State<Home> {
                         end: Alignment.bottomCenter,
                         colors: [
                           variaveis.laranjaClaro,
-                          variaveis.laranjaMuitoForte,
+                          variaveis.vermelho,
                         ],
                       ),
                     ),
