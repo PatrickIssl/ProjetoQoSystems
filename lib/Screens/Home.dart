@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:qosystem/globals/communs/Drawer.dart';
 import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
@@ -50,8 +51,10 @@ class _HomeState extends State<Home> {
                     width: 85,
                     child: Center(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.menu_book),
+                          Icon(Icons.menu_book, size: 50,),
+                          SizedBox(height: 2,),
                           Text("Cardápio")
                         ],
                       ),
@@ -78,8 +81,10 @@ class _HomeState extends State<Home> {
                     width: 85,
                     child: Center(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.post_add),
+                          Icon(Icons.post_add, size: 50,),
+                          SizedBox(height: 2),
                           Text("Pedidos")
                         ],
                       ),
@@ -112,9 +117,11 @@ class _HomeState extends State<Home> {
                     width: 85,
                     child: Center(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.menu_book),
-                          Text("Cardápio")
+                          Icon(Icons.list_alt ,size: 50,),
+                          SizedBox(height: 2),
+                          Text("Comandas")
                         ],
                       ),
                     ),
@@ -140,9 +147,11 @@ class _HomeState extends State<Home> {
                     width: 85,
                     child: Center(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.post_add),
-                          Text("Pedidos")
+                          Icon(Icons.person_add_alt_1_outlined, size: 50,),
+                          SizedBox(height: 2),
+                          Text("Funcionários")
                         ],
                       ),
                     ),
@@ -174,9 +183,11 @@ class _HomeState extends State<Home> {
                     width: 85,
                     child: Center(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.menu_book),
-                          Text("Cardápio")
+                          Icon(Icons.money, size: 50,),
+                          SizedBox(height: 2),
+                          Text("Pagamento")
                         ],
                       ),
                     ),
@@ -202,9 +213,11 @@ class _HomeState extends State<Home> {
                     width: 85,
                     child: Center(
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.post_add),
-                          Text("Pedidos")
+                          Icon(Icons.format_list_bulleted, size: 50,),
+                          SizedBox(height: 2),
+                          Text("Concluidos")
                         ],
                       ),
                     ),

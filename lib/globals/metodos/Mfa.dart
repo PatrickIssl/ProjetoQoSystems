@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 enviarCodigo(context, Conta conta) async {
   http.Response response = await http.get(
-      "${variaveis.url}mfa/buscar/${conta.mfa}/${conta.id}",
+      "${variaveis.url}mfa/buscar/${conta.mfa}/${conta.idconta}",
       headers: variaveis.headerComum);
   if (response.statusCode == 200) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(

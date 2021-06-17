@@ -91,7 +91,6 @@ class _TelaMfaState extends State<TelaMfa> {
                                           }
                                           return null;
                                         },
-                                        keyboardType: TextInputType.number,
                                         textAlign: TextAlign.center,
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
@@ -125,7 +124,6 @@ class _TelaMfaState extends State<TelaMfa> {
                                           }
                                           return null;
                                         },
-                                        keyboardType: TextInputType.number,
                                         textAlign: TextAlign.center,
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
@@ -159,7 +157,6 @@ class _TelaMfaState extends State<TelaMfa> {
                                           }
                                           return null;
                                         },
-                                        keyboardType: TextInputType.number,
                                         textAlign: TextAlign.center,
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
@@ -193,7 +190,6 @@ class _TelaMfaState extends State<TelaMfa> {
                                           }
                                           return null;
                                         },
-                                        keyboardType: TextInputType.number,
                                         textAlign: TextAlign.center,
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
@@ -227,7 +223,6 @@ class _TelaMfaState extends State<TelaMfa> {
                                           }
                                           return null;
                                         },
-                                        keyboardType: TextInputType.number,
                                         textAlign: TextAlign.center,
                                         decoration: InputDecoration(
                                           border: new OutlineInputBorder(
@@ -255,7 +250,6 @@ class _TelaMfaState extends State<TelaMfa> {
                                 GestureDetector(
                                   onTap: () {
                                     enviarCodigo(context, conta);
-                                    print("enviado");
                                   },
                                   child: Text(
                                     "Enviar o código novamente",
