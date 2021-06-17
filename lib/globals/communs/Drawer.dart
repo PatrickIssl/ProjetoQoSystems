@@ -27,6 +27,7 @@ class _DrawerComunState extends State<DrawerComun> {
             child: Column(
               children: [
                 CircleAvatar(
+                  backgroundColor: variaveis.laranja,
                   child: Text(
                     '${variaveis.conta.nome[0].toUpperCase()}',
                     style: TextStyle(fontSize: 50),
