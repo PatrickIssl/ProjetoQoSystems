@@ -28,13 +28,13 @@ class _DrawerComunState extends State<DrawerComun> {
               children: [
                 CircleAvatar(
                   child: Text(
-                    '${variaveis.login.login[0].toUpperCase()}',
+                    '${variaveis.conta.nome[0].toUpperCase()}',
                     style: TextStyle(fontSize: 50),
                   ),
                   minRadius: 50,
                 ),
                 Padding(padding: EdgeInsets.only(top: 10)),
-                Text("Usuário: ${variaveis.login.login}")
+                Text("Usuário: ${variaveis.conta.nome}")
               ],
             ),
           ),

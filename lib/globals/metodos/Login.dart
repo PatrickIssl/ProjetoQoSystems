@@ -28,6 +28,7 @@ Future<Conta> realizarLogin(context) async {
         dadosJson["conta"]["senha"].toString(),
         dadosJson["conta"]["mfa"].toString());
     variaveis.conta = conta;
+    print(conta.conta);
     return conta;
   }
   if (response.statusCode == 400) {

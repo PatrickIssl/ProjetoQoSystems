@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qosystem/Screens/Home.dart';
 import 'package:qosystem/Screens/Login.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/Screens/TelaMfa.dart';
@@ -17,6 +18,7 @@ void main() async{
       '/login': (context) => Login(),
       '/recuperar': (context) => RecuperaSenha(),
       '/mfa': (context) => TelaMfa(),
+      '/home': (context) => Home(),
     },
     debugShowCheckedModeBanner: false,
   ));
