@@ -68,8 +68,10 @@ class _TelaMfaState extends State<TelaMfa> {
                             child: Image.asset("assets/imagens/logo.png")),
                         Padding(
                           padding: EdgeInsets.only(top: 75),
-                          child: Text(variaveis.enviadoEmail,
-                          textAlign: TextAlign.center,),
+                          child: Text(
+                            variaveis.enviadoEmail,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         Padding(padding: EdgeInsets.only(top: 75)),
                         Form(
@@ -82,7 +84,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
                                         autofocus: true,
-                                        onChanged: (value){
+                                        onChanged: (value) {
                                           _focusNodes[0].requestFocus();
                                         },
                                         validator: (value) {
@@ -114,7 +116,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
-                                        onChanged: (value){
+                                        onChanged: (value) {
                                           _focusNodes[1].requestFocus();
                                         },
                                         focusNode: _focusNodes[0],
@@ -147,7 +149,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
-                                        onChanged: (value){
+                                        onChanged: (value) {
                                           _focusNodes[2].requestFocus();
                                         },
                                         focusNode: _focusNodes[1],
@@ -180,7 +182,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
-                                        onChanged: (value){
+                                        onChanged: (value) {
                                           _focusNodes[3].requestFocus();
                                         },
                                         focusNode: _focusNodes[2],
@@ -213,7 +215,7 @@ class _TelaMfaState extends State<TelaMfa> {
                                     child: Padding(
                                       padding: EdgeInsets.all(2),
                                       child: TextFormField(
-                                        onChanged: (value){
+                                        onChanged: (value) {
                                           _focusNodes[3].unfocus();
                                         },
                                         focusNode: _focusNodes[3],
@@ -264,12 +266,14 @@ class _TelaMfaState extends State<TelaMfa> {
                             padding: EdgeInsets.only(top: 75),
                             child: GestureDetector(
                               onTap: () {
-                                String mfa = umController.text.toString() +
-                                    doisController.text.toString() +
-                                    tresController.text.toString() +
-                                    quatroController.text.toString() +
-                                    cincoController.text.toString();
-                                verificarMfa(context, mfa, conta);
+                                if (_formKey.currentState.validate()) {
+                                  String mfa = umController.text.toString() +
+                                      doisController.text.toString() +
+                                      tresController.text.toString() +
+                                      quatroController.text.toString() +
+                                      cincoController.text.toString();
+                                  verificarMfa(context, mfa, conta);
+                                }
                               },
                               child: Image.asset("assets/imagens/flecha.png"),
                             )),
