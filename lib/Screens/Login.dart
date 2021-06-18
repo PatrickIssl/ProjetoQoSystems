@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/Screens/TelaMfa.dart';
+import 'package:qosystem/globals/metodos/BuscarUsuario.dart';
 import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
 class Login extends StatefulWidget {
@@ -19,12 +20,34 @@ class _LoginState extends State<Login> {
     if(_controllerSenha.text != "" && _controllerSenha.text != ""){
       variaveis.login.login = _controllerLogin.text;
       variaveis.login.password = _controllerSenha.text;
-      Navigator.pushNamed(
+
+      var usuario = await buscarUsuario(context);
+
+      if(usuario == true) {
+        Navigator.pushNamed(
           context, '/mfa',
-          );
+        );
+      }else{
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Row(
+            children: <Widget>[
+              Icon(
+                Icons.assignment_late_outlined,
+                color: variaveis.branco,
+                size: 24.0,
+              ),
+              Text(
+                  "Conta Não Encontrada")
+            ],
+          ),
+          backgroundColor: variaveis.vermelho,
+        ));
+      }
 
     }
   }
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -40,113 +63,131 @@ class _LoginState extends State<Login> {
             ],
           ),
         ),
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(50),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Padding(padding: EdgeInsets.only(top: 20),
-                  child: Image.asset("assets/imagens/logo.png")
-              ),
-              Padding(padding: EdgeInsets.only(top: 75),
-                child:    Text(variaveis.bemVindo),
-              ),
-              Padding(padding: EdgeInsets.only(top: 25),
-                  child:Theme(
-                    data: Theme.of(context).copyWith(accentColor: variaveis.vermelho),
-                    child:TextField(
-                      keyboardType: TextInputType.text,
-                      decoration: InputDecoration(
-                        labelText: "Login",
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: variaveis.preto),
-                        ),
-                          labelStyle: TextStyle(
-                              color: variaveis.laranjaClaro,
-                              decorationColor: variaveis.branco,
-                          ),
-                          fillColor: variaveis.branco,
-                          filled: true,
-                      ),
-                      cursorColor: variaveis.preto,
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: variaveis.preto,
-                        decorationColor: variaveis.laranjaClaro,
-                      ),
-                      controller: _controllerLogin,
-                  ),
-                ),
-              ),
+        child: Form(
+          key: _formKey,
+         child: SingleChildScrollView(
+           padding: EdgeInsets.all(50),
+           child: Column(
+             crossAxisAlignment: CrossAxisAlignment.center,
+             children: <Widget>[
+               Padding(padding: EdgeInsets.only(top: 20),
+                   child: Image.asset("assets/imagens/logo.png")
+               ),
+               Padding(padding: EdgeInsets.only(top: 75),
+                 child:    Text(variaveis.bemVindo),
+               ),
+               Padding(padding: EdgeInsets.only(top: 25),
+                 child:Theme(
+                   data: Theme.of(context).copyWith(accentColor: variaveis.vermelho),
+                   child:TextFormField(
+                     // ignore: missing_return
+                     validator: (value) {
+                       if (value.isEmpty) {
+                         return "Informe uma conta válida";
+                       }
+                     },
+                     keyboardType: TextInputType.text,
+                     decoration: InputDecoration(
+                       labelText: "Login",
+                       focusedBorder: UnderlineInputBorder(
+                         borderSide: BorderSide(color: variaveis.preto),
+                       ),
+                       labelStyle: TextStyle(
+                         color: variaveis.laranjaClaro,
+                         decorationColor: variaveis.branco,
+                       ),
+                       fillColor: variaveis.branco,
+                       filled: true,
+                     ),
+                     cursorColor: variaveis.preto,
+                     style: TextStyle(
+                       fontSize: 15,
+                       color: variaveis.preto,
+                       decorationColor: variaveis.laranjaClaro,
+                     ),
+                     controller: _controllerLogin,
+                   ),
+                 ),
+               ),
 
-              Padding(padding: EdgeInsets.only(top: 20),
-                child:Theme(
-                  data: Theme.of(context).copyWith(accentColor: variaveis.vermelho),
-                  child: TextField(
-                    obscureText: _showPassword == false? true :false,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      labelText: "Senha",
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: variaveis.preto),
-                      ),
-                      suffixIcon: GestureDetector(
-                        child: Icon(_showPassword == false? Icons.visibility_off: Icons.visibility, color: variaveis.preto,),
-                        onTap: (){
-                          setState(() {
-                            _showPassword = !_showPassword;
-                          });
-                        },
-                      ),
-                      labelStyle: TextStyle(
-                        color: variaveis.laranjaClaro,
-                        decorationColor: variaveis.laranjaClaro,
-                      ),
-                      fillColor: variaveis.branco,
-                      filled: true,
-                    ),
-                    cursorColor: variaveis.preto,
-                    style: TextStyle(
-                      fontSize: 15,
-                      color: variaveis.preto,
-                    ),
-                    controller: _controllerSenha,
-                ),
-              ),
-             ),
+               Padding(padding: EdgeInsets.only(top: 20),
+                 child:Theme(
+                   data: Theme.of(context).copyWith(accentColor: variaveis.vermelho),
+                   child:TextFormField(
+                     // ignore: missing_return
+                     validator: (value) {
+                       if (value.isEmpty) {
+                         return "Informe uma senha valida";
+                       }
+                     },
+                     obscureText: _showPassword == false? true :false,
+                     keyboardType: TextInputType.text,
+                     decoration: InputDecoration(
+                       labelText: "Senha",
+                       focusedBorder: UnderlineInputBorder(
+                         borderSide: BorderSide(color: variaveis.preto),
+                       ),
+                       suffixIcon: GestureDetector(
+                         child: Icon(_showPassword == false? Icons.visibility_off: Icons.visibility, color: variaveis.preto,),
+                         onTap: (){
+                           setState(() {
+                             _showPassword = !_showPassword;
+                           });
+                         },
+                       ),
+                       labelStyle: TextStyle(
+                         color: variaveis.laranjaClaro,
+                         decorationColor: variaveis.laranjaClaro,
+                       ),
+                       fillColor: variaveis.branco,
+                       filled: true,
+                     ),
+                     cursorColor: variaveis.preto,
+                     style: TextStyle(
+                       fontSize: 15,
+                       color: variaveis.preto,
+                     ),
+                     controller: _controllerSenha,
+                   ),
+                 ),
+               ),
 
-              Padding(padding: EdgeInsets.only(top: 10),
-                child:Row(
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap:(){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => RecuperaSenha()),
-                        );
-                      },
-                      child:Text("Esqueceu sua senha?",
-                        style: TextStyle(
-                          color: variaveis.preto,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              ),
-              Padding(padding: EdgeInsets.only(top: 75),
-                  child: GestureDetector(
-                      onTap: _realizarLogin,
-                      child:Image.asset("assets/imagens/flecha.png"),
-                  )
-              ),
-              Padding(padding: EdgeInsets.only(top: 75),
-                child:Text(variaveis.version)
-              ),
-            ],
-          ),
-        ),
-
+               Padding(padding: EdgeInsets.only(top: 10),
+                   child:Row(
+                     children: <Widget>[
+                       GestureDetector(
+                         onTap:(){
+                           Navigator.push(
+                             context,
+                             MaterialPageRoute(builder: (context) => RecuperaSenha()),
+                           );
+                         },
+                         child:Text("Esqueceu sua senha?",
+                           style: TextStyle(
+                             color: variaveis.preto,
+                           ),
+                         ),
+                       ),
+                     ],
+                   )
+               ),
+               Padding(padding: EdgeInsets.only(top: 75),
+                   child: GestureDetector(
+                     onTap: (){
+                       if (_formKey.currentState.validate()) {
+                         _realizarLogin();
+                       }
+                     },
+                     child:Image.asset("assets/imagens/flecha.png"),
+                   )
+               ),
+               Padding(padding: EdgeInsets.only(top: 75),
+                   child:Text(variaveis.version)
+               ),
+             ],
+           ),
+         ),
+        )
       ),
     );
   }
