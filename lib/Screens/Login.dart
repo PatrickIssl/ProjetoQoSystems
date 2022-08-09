@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/Screens/TelaMfa.dart';
 import 'package:qosystem/globals/metodos/BuscarUsuario.dart';
@@ -53,6 +54,8 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: Get.width,
+        height: Get.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,
@@ -66,17 +69,17 @@ class _LoginState extends State<Login> {
         child: Form(
           key: _formKey,
          child: SingleChildScrollView(
-           padding: EdgeInsets.all(50),
+           padding: EdgeInsets.all(Get.height * 0.0223),
            child: Column(
              crossAxisAlignment: CrossAxisAlignment.center,
              children: <Widget>[
-               Padding(padding: EdgeInsets.only(top: 20),
+               Padding(padding: EdgeInsets.only(top: Get.height * 0.0223),
                    child: Image.asset("assets/imagens/logo.png")
                ),
-               Padding(padding: EdgeInsets.only(top: 75),
+               Padding(padding: EdgeInsets.only(top: Get.height * 0.083325),
                  child:    Text(variaveis.bemVindo),
                ),
-               Padding(padding: EdgeInsets.only(top: 25),
+               Padding(padding: EdgeInsets.only(top: Get.height * 0.027775),
                  child:Theme(
                    data: Theme.of(context).copyWith(accentColor: variaveis.vermelho),
                    child:TextFormField(
@@ -88,7 +91,7 @@ class _LoginState extends State<Login> {
                      },
                      keyboardType: TextInputType.text,
                      decoration: InputDecoration(
-                       labelText: "Login",
+                       labelText: "E-mail",
                        focusedBorder: UnderlineInputBorder(
                          borderSide: BorderSide(color: variaveis.preto),
                        ),
@@ -110,7 +113,7 @@ class _LoginState extends State<Login> {
                  ),
                ),
 
-               Padding(padding: EdgeInsets.only(top: 20),
+               Padding(padding: EdgeInsets.only(top: Get.height * 0.0223),
                  child:Theme(
                    data: Theme.of(context).copyWith(accentColor: variaveis.vermelho),
                    child:TextFormField(
@@ -152,7 +155,7 @@ class _LoginState extends State<Login> {
                  ),
                ),
 
-               Padding(padding: EdgeInsets.only(top: 10),
+               Padding(padding: EdgeInsets.only(top: Get.height * 0.01115),
                    child:Row(
                      children: <Widget>[
                        GestureDetector(
@@ -171,7 +174,7 @@ class _LoginState extends State<Login> {
                      ],
                    )
                ),
-               Padding(padding: EdgeInsets.only(top: 75),
+               Padding(padding: EdgeInsets.only(top: Get.height * 0.083325),
                    child: GestureDetector(
                      onTap: (){
                        if (_formKey.currentState.validate()) {
@@ -181,7 +184,7 @@ class _LoginState extends State<Login> {
                      child:Image.asset("assets/imagens/flecha.png"),
                    )
                ),
-               Padding(padding: EdgeInsets.only(top: 75),
+               Padding(padding: EdgeInsets.only(top: Get.height * 0.083325),
                    child:Text(variaveis.version)
                ),
              ],

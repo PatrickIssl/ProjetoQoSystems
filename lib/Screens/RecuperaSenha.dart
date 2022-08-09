@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
 class RecuperaSenha extends StatefulWidget {
@@ -21,6 +22,8 @@ class _RecuperaSenhaState extends State<RecuperaSenha> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        width: Get.width,
+        height: Get.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,

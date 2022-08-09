@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qosystem/gradients/GradientText.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:qosystem/globals/variaveis.dart' as variaveis;
@@ -16,7 +17,8 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: double.infinity,
+        width: Get.width,
+        height: Get.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topLeft,

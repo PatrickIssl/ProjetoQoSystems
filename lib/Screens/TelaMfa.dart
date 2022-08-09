@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/entity/Conta.dart';
 import 'package:qosystem/entity/LoginEntity.dart';
@@ -48,6 +49,8 @@ class _TelaMfaState extends State<TelaMfa> {
 
               return Scaffold(
                 body: Container(
+                  width: Get.width,
+                  height: Get.height,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
