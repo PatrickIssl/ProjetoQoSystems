@@ -6,6 +6,8 @@ import 'package:qosystem/Screens/TelaMfa.dart';
 import 'package:qosystem/globals/metodos/BuscarUsuario.dart';
 import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
+import '../entity/Conta.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -24,7 +26,7 @@ class _LoginState extends State<Login> {
 
       var usuario = await buscarUsuario(context);
 
-      if(usuario == true) {
+      if(usuario != null) {
         Navigator.pushNamed(
           context, '/mfa',
         );
@@ -46,6 +48,12 @@ class _LoginState extends State<Login> {
       }
 
     }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
   }
 
   final _formKey = GlobalKey<FormState>();
@@ -77,7 +85,7 @@ class _LoginState extends State<Login> {
                    child: Image.asset("assets/imagens/logo.png")
                ),
                Padding(padding: EdgeInsets.only(top: Get.height * 0.083325),
-                 child:    Text(variaveis.bemVindo),
+                 child:    Center(child: Text(variaveis.bemVindo, textAlign: TextAlign.center,),),
                ),
                Padding(padding: EdgeInsets.only(top: Get.height * 0.027775),
                  child:Theme(

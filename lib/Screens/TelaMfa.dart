@@ -62,7 +62,7 @@ class _TelaMfaState extends State<TelaMfa> {
                     ),
                   ),
                   child: SingleChildScrollView(
-                    padding: EdgeInsets.all(50),
+                    padding: EdgeInsets.all(Get.height*0.1125),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[

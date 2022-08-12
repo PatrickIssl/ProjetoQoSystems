@@ -7,6 +7,7 @@ enviarCodigo(context, Conta conta) async {
   http.Response response = await http.get(
       "${variaveis.url}mfa/buscar/${conta.mfa}/${conta.idconta}",
       headers: variaveis.headerComum);
+
   if (response.statusCode == 200) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Row(

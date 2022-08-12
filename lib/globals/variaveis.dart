@@ -51,3 +51,4 @@ var preto = Colors.black;
 var cinza = Color(0xFF928F8F);
 var pretoClaro = Colors.black38;
 
+int selectedPage = 0;
