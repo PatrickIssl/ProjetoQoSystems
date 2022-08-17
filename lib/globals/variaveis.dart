@@ -42,6 +42,7 @@ branco
 
 //cores
 var laranjaClaro = Colors.orange;
+var white = Colors.white;
 var verde = Colors.green;
 var laranja = Color(0xB9FF9900);
 var vermelho = Color(0xFFF01C00);
