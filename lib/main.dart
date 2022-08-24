@@ -3,6 +3,7 @@ import 'package:qosystem/Screens/Home.dart';
 import 'package:qosystem/Screens/Login.dart';
 import 'package:qosystem/Screens/RecuperaSenha.dart';
 import 'package:qosystem/Screens/TelaMfa.dart';
+import 'package:qosystem/Screens/Menu.dart';
 import 'package:qosystem/globals/variaveis.dart';
 
 
@@ -19,6 +20,7 @@ void main() async{
       '/recuperar': (context) => RecuperaSenha(),
       '/mfa': (context) => TelaMfa(),
       '/home': (context) => Home(),
+      '/menu': (context) => Menu()
     },
     debugShowCheckedModeBanner: false,
   ));
