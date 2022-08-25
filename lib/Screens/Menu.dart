@@ -29,23 +29,42 @@ class _MenuState extends State<Menu> {
     ];
 
     return Scaffold(
-        appBar: comumAppBar("Lanches"),
+        appBar: comumAppBarAction("Lanches", [
+          IconButton(
+            padding: EdgeInsets.only(right: Get.width * 0.05),
+            icon: Icon(
+              Icons.search,
+              size: Get.height * 0.035,
+              color: Colors.black54,
+            ),
+            tooltip: 'Buscar Item',
+            onPressed: () {},
+          )
+        ]),
         body: Container(
-          width: Get.width,
-          height: Get.height,
-          child: Padding(
-              padding: EdgeInsets.symmetric(vertical: Get.height * 0.0359),
-              child: Container(
-                height: Get.height,
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      MenuWidget("teste", "https://picsum.photos/1200/1200")
-                    ],
-                  ),
+            width: Get.width,
+            height: Get.height,
+            child: Container(
+              height: Get.height,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    MenuWidget(
+                        "teste",
+                        "https://picsum.photos/1200/1200",
+                        "X-tudo",
+                        "Pão, hamburguer, queijo, alface , tomate, calabresa, bacon e salsicha.",
+                        "35,00"),
+                    MenuWidget(
+                        "teste",
+                        "https://picsum.photos/1201/1201",
+                        "X-calabresa",
+                        "Pão, hamburguer, queijo, alface , tomate, calabresa, cebola.",
+                        "20,00"),
+                  ],
                 ),
-              )),
-        ),
+              ),
+            )),
         floatingActionButton: Container(
           height: Get.width * 0.194,
           width: Get.width * 0.194,

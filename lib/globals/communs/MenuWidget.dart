@@ -4,27 +4,34 @@ import 'package:qosystem/globals/variaveis.dart' as variaveis;
 
 import '../../Screens/Home.dart';
 
-Widget MenuWidget(var categoria , var img){
-  return Padding( padding: EdgeInsets.only( bottom: Get.height * 0.0421875),
-    child: Container(
-      decoration: BoxDecoration(
-        border: Border(bottom: BorderSide()),
-      ),
-      width: Get.width,
-      height: Get.height * 0.125,
-      child:
-      Row(
+Widget MenuWidget(
+    var categoria, var img, var nomeLanche, var Ingredientes, var valor) {
+  return Container(
+    decoration: BoxDecoration(
+      border: Border(bottom: BorderSide()),
+    ),
+    width: Get.width,
+    height: Get.height * 0.18,
+    child: Padding(
+      padding: EdgeInsets.symmetric(horizontal: Get.width * 0.04444),
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("nomeLanche" , style: TextStyle(fontWeight: FontWeight.bold)),
-                Text("Ingredientes"),
-                Text("R\$ valor" , style: TextStyle(fontWeight: FontWeight.bold))
-              ]
-          ),
+                Padding(padding: EdgeInsets.only(bottom: Get.height*0.01) , child: Text( "${nomeLanche}",),),
+                Padding(padding: EdgeInsets.only(bottom: Get.height*0.01) , child:Container(
+                  width: Get.width * 0.70,
+                  child: Text(
+                    "${Ingredientes}",
+                    style: TextStyle(overflow: TextOverflow.fade),
+                  ),
+                )),
+                Text("R\$ ${valor}",
+                    style: TextStyle(fontWeight: FontWeight.bold))
+              ]),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -34,19 +41,15 @@ Widget MenuWidget(var categoria , var img){
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(6)),
                   image: DecorationImage(
-                    image: NetworkImage(
-                        '${img}'),
+                    image: NetworkImage('${img}'),
                     fit: BoxFit.fill,
                   ),
                 ),
               )
-
             ],
           )
         ],
       ),
-
     ),
   );
-
 }
