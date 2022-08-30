@@ -17,21 +17,24 @@ Widget MenuWidget(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(padding: EdgeInsets.only(bottom: Get.height*0.01) , child: Text( "${nomeLanche}",),),
-                Padding(padding: EdgeInsets.only(bottom: Get.height*0.01) , child:Container(
-                  width: Get.width * 0.70,
-                  child: Text(
-                    "${Ingredientes}",
-                    style: TextStyle(overflow: TextOverflow.fade),
-                  ),
-                )),
-                Text("R\$ ${valor}",
-                    style: TextStyle(fontWeight: FontWeight.bold))
-              ]),
+         Container(
+           width: Get.width * 0.50,
+           child:  Column(
+               crossAxisAlignment: CrossAxisAlignment.start,
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: <Widget>[
+                 Padding(padding: EdgeInsets.only(bottom: Get.height*0.01) , child: Text( "${nomeLanche}",),),
+                 Padding(padding: EdgeInsets.only(bottom: Get.height*0.01) , child:Container(
+                   width: Get.width * 0.70,
+                   child: Text(
+                     "${Ingredientes}",
+                     style: TextStyle(overflow: TextOverflow.fade),
+                   ),
+                 )),
+                 Text("R\$ ${valor}",
+                     style: TextStyle(fontWeight: FontWeight.bold))
+               ]),
+         ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
